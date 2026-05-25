@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./assets/favico.png" type="image/png" />
-    <title>Kyodai</title>
+    <link rel="icon" href="" type="image/png" />
+    <title>Nepal Update News Pvt Ltd</title>
     <link rel="stylesheet" href="./style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -16,14 +16,13 @@
   <!-- body -->
   <body class="bg-white">
     <!-- TOP STRIP -->
-    <div
+    <!-- <div
       class="w-full bg-[#F8F8F8] border-b border-[#e9e9e9] text-[13px] text-gray-700"
     >
       <div class="max-w-7xl mx-auto px-6 md:px-0">
         <div
           class="flex flex-col gap-2 py-2 sm:flex-row sm:items-center sm:justify-between"
         >
-          <!-- left info -->
           <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
             <span class="inline-flex items-center gap-2">
               <i class="fa-regular fa-calendar text-[#c62828]"></i>
@@ -41,7 +40,6 @@
             </span>
           </div>
 
-          <!-- right socials -->
           <div class="flex items-center gap-4">
             <a
               class="opacity-70 hover:opacity-100 hover:text-[#c62828] transition"
@@ -80,36 +78,50 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- BRAND ROW -->
     <header id="brandRow" class="w-full bg-white">
       <div class="max-w-7xl mx-auto px-6 md:px-0 py-6">
-        <div
-          class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"
-        >
+        <div class="flex flex-col gap-4">
           <!-- Logo -->
-          <a href="#" class="inline-flex justify-center lg:justify-start">
+          <!-- <a href="#" class="inline-flex justify-center">
             <img
               src="./assets/Kyodainews.com-9.gif"
               alt="Kyodai Logo"
               class="h-24 w-auto block"
             />
-          </a>
+          </a> -->
+          <div class="inline-flex items-center justify-center">
+            <h1
+              class="inline-flex flex-col rounded-md border-l-4 border-[#FFD83E] bg-[#323231] px-5 py-3 leading-tight shadow-sm"
+            >
+              <span
+                class="text-2xl font-bold tracking-tight text-white md:text-4xl"
+              >
+                Nepal Update <span class="text-[#FFD83E]">News</span>
+              </span>
+              <span
+                class="mt-1 text-xs font-medium uppercase tracking-[0.25em] text-[#FFD83E] md:text-sm"
+              >
+                Pvt. Ltd.
+              </span>
+            </h1>
+          </div>
 
-          <div class="flex justify-center lg:justify-end">
+          <!-- <div class="flex justify-center lg:justify-end">
             <img
               src="./assets/advertisement.gif"
               alt="Advertisement"
               class="h-16 sm:h-20 lg:h-24 w-auto max-w-full object-contain block"
             />
-          </div>
+          </div> -->
         </div>
       </div>
     </header>
 
     <!-- NAVBAR  -->
-    <nav id="mainNav" class="sticky top-0 z-50 bg-[#273890]">
+    <nav id="mainNav" class="sticky top-0 z-50 bg-[#323231]">
       <div class="max-w-7xl mx-auto px-6 md:px-0">
         <div class="flex items-center min-h-[64px]">
           <!-- mini brand  -->
@@ -119,11 +131,11 @@
               href="./index.html"
               class="opacity-0 -translate-y-1 pointer-events-none transition duration-400 will-change-transform"
             >
-              <img
+              <!-- <img
                 src="./assets/Kyodainews-logo.png"
                 alt="Kyodai"
                 class="h-16 w-auto block"
-              />
+              /> -->
             </a>
           </div>
 
@@ -165,7 +177,7 @@
                 id="searchBtn"
                 type="button"
                 aria-label="Search"
-                class="p-2 text-[18px] text-white hover:text-[#c62828] transition"
+                class="w-10 h-10 flex items-center justify-center text-[18px] text-black bg-[#FFD83E]"
               >
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
@@ -182,7 +194,7 @@
                   name="q"
                   placeholder="Search..."
                   aria-label="Search"
-                  class="h-10 w-[220px] border border-[#e9e9e9] px-3 outline-none focus:border-[#c62828]"
+                  class="h-10 w-[220px] border border-[#323231] px-3 outline-none focus:border-[##FFD83E]"
                 />
               </form>
             </div>
@@ -190,7 +202,7 @@
             <button
               id="menuBtn"
               type="button"
-              class="lg:hidden p-2 border border-[#e9e9e9] flex-shrink-0"
+              class="lg:hidden p-2 border border-[#323231] flex-shrink-0"
               aria-label="Open menu"
               aria-expanded="false"
               aria-controls="mobileMenu"
@@ -203,7 +215,7 @@
         <!-- MOBILE MENU -->
         <div
           id="mobileMenu"
-          class="lg:hidden hidden border-t border-[#e9e9e9] py-2"
+          class="lg:hidden hidden border-t border-[#323231] py-2"
         >
           <a class="block px-2 py-2" href="#">गृहपृष्ठ</a>
           <a class="block px-2 py-2" href="#">राजनीति</a>
@@ -343,136 +355,187 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-[#0b1a4a] text-white mt-12">
+    <footer class="bg-black text-white mt-12">
       <div class="max-w-7xl mx-auto px-6 md:px-0 pt-10 pb-6">
         <!-- TOP MAIN FOOTER -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <!-- ABOUT -->
-          <div class="lg:col-span-5 space-y-8">
-            <h3 class="text-4xl font-medium">हाम्रो बारेमा</h3>
+          <div class="lg:col-span-5 space-y-6">
+            <h3 class="text-3xl md:text-4xl font-medium text-white">
+              हाम्रो बारेमा
+            </h3>
 
-            <p class="text-xl leading-relaxed text-white/70 max-w-xl">
-              Kyodai News is the best online news portal of Nepal and Japan.
-              Find online breaking news, updates, and trusted stories every day.
+            <p
+              class="text-lg md:text-xl leading-relaxed text-white/75 max-w-xl"
+            >
+              Nepal Update News Pvt. Ltd. नेपाली समाज, राजनीति, अर्थतन्त्र,
+              खेलकुद, अन्तर्राष्ट्रिय घटना र समसामयिक विषयमा आधारित विश्वसनीय,
+              निष्पक्ष र ताजा समाचार प्रस्तुत गर्ने डिजिटल समाचार माध्यम हो।
             </p>
           </div>
 
           <!-- USEFUL LINKS -->
-          <div class="lg:col-span-4 space-y-8">
-            <h3 class="text-4xl font-medium">उपयोगी लिंकहरु</h3>
+          <div class="lg:col-span-4 space-y-6">
+            <h3 class="text-3xl md:text-4xl font-medium text-white">
+              उपयोगी लिंकहरु
+            </h3>
 
-            <div
-              class="grid grid-cols-2 gap-y-4 gap-x-10 text-lg text-white/70"
-            >
+            <div class="grid grid-cols-2 gap-y-4 gap-x-8 text-lg text-white/75">
               <a href="#" class="hover:text-white transition">राजनीति</a>
               <a href="#" class="hover:text-white transition">अर्थ</a>
               <a href="#" class="hover:text-white transition"
                 >अन्तर्राष्ट्रिय</a
               >
-
-              <a href="#" class="hover:text-white transition"> खेलकुद</a>
-              <a href="#" class="hover:text-white transition"> नेपाल विशेष</a>
-
-              <a href="#" class="hover:text-white transition"> जापान विशेष</a>
-
-              <a href="#" class="hover:text-white transition">
-                प्रवास गतिविधि</a
-              >
-              <a href="#" class="hover:text-white transition"> कला / साहित्य</a>
+              <a href="#" class="hover:text-white transition">खेलकुद</a>
+              <a href="#" class="hover:text-white transition">नेपाल विशेष</a>
+              <a href="#" class="hover:text-white transition">समाज</a>
+              <a href="#" class="hover:text-white transition">प्रवास गतिविधि</a>
+              <a href="#" class="hover:text-white transition">कला / साहित्य</a>
             </div>
           </div>
 
           <!-- CONTACT -->
-          <div class="lg:col-span-3 space-y-8">
-            <h3 class="text-4xl font-medium">सम्पर्क</h3>
+          <div class="lg:col-span-3 space-y-6">
+            <h3 class="text-3xl md:text-4xl font-medium text-white">सम्पर्क</h3>
 
-            <div class="space-y-6 text-lg text-white/90">
-              <div class="flex items-center gap-4">
-                <i class="fa-solid fa-location-dot"></i>
-                <span class="font-normal text-white/70">Kathmandu, Nepal</span>
+            <div class="space-y-5 text-lg text-white/90">
+              <div class="flex items-start gap-4">
+                <i class="fa-solid fa-location-dot mt-1 text-white/80"></i>
+                <div>
+                  <p
+                    class="text-[16px] text-white/75 hover:text-white transition"
+                  >
+                    बानेश्वर-३१ काठमाडौं
+                  </p>
+                </div>
               </div>
 
-              <div class="flex items-center gap-4">
-                <i class="fa-solid fa-phone"></i>
-                <span class="font-normal text-white/70">+977 01-4102676</span>
+              <div class="flex items-start gap-4">
+                <i class="fa-solid fa-phone mt-1 text-white/80"></i>
+                <div>
+                  <a
+                    href="tel:9841099336"
+                    class="text-[16px] text-white/75 hover:text-white transition"
+                  >
+                    9841099336
+                  </a>
+                </div>
               </div>
 
-              <div class="flex items-center gap-4">
-                <i class="fa-solid fa-envelope"></i>
-                <span class="font-normal text-white/70"
-                  >info@kyodainews.com</span
-                >
+              <div class="flex items-start gap-4">
+                <i class="fa-solid fa-envelope mt-1 text-white/80"></i>
+                <div>
+                  <a
+                    href="mailto:nepalupdatemedia2082@gmail.com"
+                    class="text-[16px] text-white/75 hover:text-white transition break-all"
+                  >
+                    nepalupdatemedia2082@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <!-- SOCIAL MEDIA UNDER CONTACT -->
+              <div class="pt-2">
+                <div class="flex items-center gap-3">
+                  <a
+                    href="#"
+                    aria-label="Facebook"
+                    class="h-10 w-10 rounded-full bg-white/10 border border-white/15 grid place-items-center hover:bg-white hover:text-[#323231] hover:border-white transition"
+                  >
+                    <i class="fa-brands fa-facebook-f"></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    aria-label="Instagram"
+                    class="h-10 w-10 rounded-full bg-white/10 border border-white/15 grid place-items-center hover:bg-white hover:text-[#323231] hover:border-white transition"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    aria-label="YouTube"
+                    class="h-10 w-10 rounded-full bg-white/10 border border-white/15 grid place-items-center hover:bg-white hover:text-[#323231] hover:border-white transition"
+                  >
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
+
+                  <a
+                    href="#"
+                    aria-label="TikTok"
+                    class="h-10 w-10 rounded-full bg-white/10 border border-white/15 grid place-items-center hover:bg-white hover:text-[#323231] hover:border-white transition"
+                  >
+                    <i class="fa-brands fa-tiktok"></i>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         <!-- DIVIDER -->
-        <div class="mt-10 border-t border-white/30"></div>
+        <div class="mt-10 border-t border-white/15"></div>
 
         <!-- MIDDLE BAR -->
-        <div class="py-4 grid grid-cols-1 lg:grid-cols-2 items-center">
+        <div
+          class="py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+        >
           <!-- LEFT: BRAND -->
-          <div class="flex items-center gap-4">
-            <img
-              src="./assets/nobg-logo-white.png"
-              alt="Kyodai News"
-              class="h-16 w-auto"
-            />
-
-            <div class="leading-tight">
-              <p class="text-lg font-semibold">Kyodai News</p>
-              <p class="text-sm text-white/70">
-                Nepal & Japan को विश्वसनीय समाचार
-              </p>
-            </div>
+          <div class="inline-flex items-center justify-center">
+            <h1
+              class="inline-flex flex-col rounded-md border-l-4 border-[#FFD83E] bg-[#323231] px-5 py-3 leading-tight shadow-sm"
+            >
+              <span
+                class="text-2xl font-bold tracking-tight text-white md:text-4xl"
+              >
+                Nepal Update <span class="text-[#FFD83E]">News</span>
+              </span>
+              <span
+                class="mt-1 text-xs font-medium uppercase tracking-[0.25em] text-[#FFD83E] md:text-sm"
+              >
+                Pvt. Ltd.
+              </span>
+            </h1>
           </div>
 
-          <!-- RIGHT: SOCIALS -->
           <div
-            class="flex flex-col sm:flex-row lg:flex-col items-start sm:items-center lg:items-end justify-between"
+            class="flex flex-wrap items-center gap-x-6 gap-y-4 text-white/80 text-base md:text-lg"
           >
-            <div class="flex items-center gap-4">
-              <a
-                href="#"
-                aria-label="Facebook"
-                class="h-10 w-10 rounded-full bg-white/10 border border-white/10 grid place-items-center hover:bg-white/20 hover:border-white/20 transition"
-              >
-                <i class="fa-brands fa-facebook-f"></i>
-              </a>
-              <a
-                href="#"
-                aria-label="Instagram"
-                class="h-10 w-10 rounded-full bg-white/10 border border-white/10 grid place-items-center hover:bg-white/20 hover:border-white/20 transition"
-              >
-                <i class="fa-brands fa-instagram"></i>
-              </a>
-              <a
-                href="#"
-                aria-label="YouTube"
-                class="h-10 w-10 rounded-full bg-white/10 border border-white/10 grid place-items-center hover:bg-white/20 hover:border-white/20 transition"
-              >
-                <i class="fa-brands fa-youtube"></i>
-              </a>
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                class="h-10 w-10 rounded-full bg-white/10 border border-white/10 grid place-items-center hover:bg-white/20 hover:border-white/20 transition"
-              >
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
+            <div class="flex items-start gap-x-3">
+              <span class="font-semibold text-white">सम्पादक</span>
+              <div class="flex flex-col line-height-snug">
+                <span>उद्दब कार्की</span>
+                <a
+                  href="tel:9841099336"
+                  class="hover:text-white transition text-sm text-white/60"
+                >
+                  9841099336
+                </a>
+              </div>
+            </div>
+
+            <span class="text-white/30 hidden md:block">|</span>
+
+            <div class="flex items-start gap-x-3">
+              <span class="font-semibold text-white">सञ्चालक</span>
+              <div class="flex flex-col line-height-snug">
+                <span>सुदर्शन कार्की</span>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- DIVIDER -->
-        <div class="border-t border-white/30"></div>
+        <div class="border-t border-white/15"></div>
 
         <!-- BOTTOM BAR -->
         <div
-          class="pt-5 flex flex-col md:flex-row items-start md:items-center justify-between text-base"
+          class="pt-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-base"
         >
-          <p>© 2026 Kyodai News. सर्वाधिकार सुरक्षित</p>
+          <p class="text-white/75">
+            © 2026 Nepal Update News Pvt. Ltd. All Rights Reserved.
+          </p>
 
           <div class="flex items-center gap-4 text-white/70">
             <a href="#" class="hover:text-white transition">Privacy Policy</a>
@@ -481,12 +544,12 @@
             >
           </div>
 
-          <div class="flex items-center gap-4 text-white">
+          <div class="flex items-center gap-3 text-white/75">
             <span>Developed by</span>
             <a
               href="https://kantipurinfotech.com"
               target="_blank"
-              class="hover:text-white transition"
+              class="hover:opacity-80 transition"
             >
               <img
                 src="./assets/kitlogo.png"
