@@ -389,9 +389,9 @@ i {
   display: flex;
   align-items: center;
   gap: 12px;
-  background: #ffd83e;
+  background: #fd221a;
   padding: 6px 18px 6px 8px;
-  color: black;
+  color: white;
   border-radius: 50px;
 }
 
@@ -400,14 +400,14 @@ i {
   height: 40px;
   border-radius: 99px;
   /* background: #cf3a3a; */
-  background: #ffd83e;
+  background: #fd221a;
   display: grid;
   place-items: center;
-  border: 1px solid #ffd83e;
+  border: 1px solid #cda3a1;
 }
 
 .section-header__icon i {
-  color: black;
+  color: white;
   font-size: 18px;
 }
 
@@ -460,11 +460,11 @@ i {
 /* hover effect */
 .section-header:hover .section-header__line::before {
   transform: scaleX(1);
-  background: #ffd83e;
+  background: #fd221a;
 }
 
 .section-header:hover .section-header__more {
-  color: #ffd83e;
+  color: #fd221a;
 }
 
 /* --latest-news css-- */
