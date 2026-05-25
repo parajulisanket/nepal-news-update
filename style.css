@@ -1,0 +1,911 @@
+@import url("https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&family=Anek+Latin:wght@100..800&family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
+
+/* Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  font-family:
+    "Mukta",
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+}
+.bar {
+  transition: 0.3s;
+}
+
+/* Brand colors */
+:root {
+  --brand-red: #c62828;
+  --text-dark: #111111;
+  --muted: #6b6b6b;
+  --line: #e9e9e9;
+  --bg: #ffffff;
+  --pagagraph: #000000a8;
+  --nav: #273890;
+}
+
+.footer-part {
+  background: #111940;
+  font-family: "Anek Devanagari", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.author {
+  font-size: 16px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.time {
+  font-size: 16px;
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 400;
+  transition: color 220ms ease-in-out;
+  letter-spacing: 0.3px;
+}
+
+.banner-title {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 72px;
+  transition: color 220ms ease-in-out;
+}
+.banner-title:hover {
+  color: black;
+}
+
+.news-title-big {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 34px;
+}
+.news-title-big-white {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 34px;
+}
+.news-title-medium {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.news-title-medium-white {
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.news-title-small {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+}
+.news-title-smallest {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.news-detail {
+  color: var(--pagagraph);
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 400;
+  letter-spacing: 0.7px;
+}
+
+.img-big {
+  aspect-ratio: 4 / 3;
+  border-radius: 4px;
+}
+.img-medium {
+  aspect-ratio: 3 / 2;
+  border-radius: 4px;
+}
+
+.img-small {
+  aspect-ratio: 16 / 9;
+  border-radius: 4px;
+}
+
+.img-smallest {
+  height: 110px;
+  width: 160px;
+  border-radius: 4px;
+}
+
+.img-category {
+  aspect-ratio: 14 / 7;
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Lock navbar height so big mini-logo doesn't cause layout jump */
+#mainNav > .max-w-7xl {
+  font-family: "Anek Devanagari", sans-serif;
+  min-height: 64px;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#mainNav {
+  transition:
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+#mainNav.nav-scrolled {
+  border-bottom: 1px solid #e9e9e9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* Smooth hide without collapsing layout violently */
+#brandRow {
+  max-height: 200px;
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    max-height 400s ease,
+    opacity 220ms ease,
+    transform 220ms ease;
+  will-change: max-height, opacity, transform;
+  overflow: hidden;
+}
+
+#brandRow.hidden-on-scroll {
+  max-height: 0px;
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+}
+
+/* Mini brand smooth show  */
+#miniBrand {
+  will-change: transform, opacity;
+}
+
+#miniBrand.show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+}
+
+/* Make mini logo big but stable  */
+#miniBrand img {
+  height: 68px;
+  width: auto;
+  display: block;
+}
+
+#searchForm {
+  transition: width 220ms ease;
+  will-change: width;
+}
+
+#searchForm.open {
+  width: 220px;
+}
+
+/* On small screens, search can expand bigger */
+@media (max-width: 1023.98px) {
+  #searchForm.open {
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  #searchForm.open {
+    width: 160px;
+  }
+}
+
+/* input styling */
+#searchInput {
+  border-radius: 0;
+  outline: none;
+}
+
+#mobileMenu {
+  transform-origin: top;
+}
+
+/* When JS adds "open", animate dropdown */
+#mobileMenu.open {
+  display: block; /* because hidden removes it */
+  animation: menuDrop 160ms ease forwards;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  background: #fff;
+}
+nav ul li {
+  color: white;
+}
+
+@keyframes menuDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid rgba(198, 40, 40, 0.35);
+  outline-offset: 2px;
+}
+
+/* Slightly smoother icon hover */
+i {
+  transition:
+    color 160ms ease,
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+/* -- marquee --*/
+.marquee {
+  --gap: 36px;
+  --duration: 22s;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+}
+
+.marquee__inner {
+  display: flex;
+  align-items: stretch;
+  width: max-content;
+  will-change: transform;
+}
+
+/* IMPORTANT: each group is one full “copy” */
+.marquee__group {
+  display: flex;
+  align-items: stretch;
+  gap: var(--gap);
+  padding-left: var(--gap);
+  flex: 0 0 auto;
+  min-width: max-content;
+  animation: marquee-scroll var(--duration) linear infinite;
+  will-change: transform;
+}
+
+.marquee:hover .marquee__group {
+  animation-play-state: paused;
+}
+
+/* Move exactly one group width */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* item look */
+.marquee__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  color: #555;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 160ms ease;
+  letter-spacing: 0.3px;
+  padding: 8px 0;
+}
+
+/* icon box before each item */
+.marquee__icon {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #e9e9e9;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  overflow: hidden;
+  background: #fff;
+}
+
+.marquee__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* separator */
+.marquee__sep {
+  width: 1px;
+  background: #e9e9e9;
+  flex: 0 0 auto;
+  align-self: stretch;
+}
+
+/* Better GPU smoothness */
+.marquee__group,
+.marquee__inner {
+  transform: translate3d(0, 0, 0);
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .marquee {
+    --gap: 28px;
+    --duration: 18s;
+  }
+  .marquee__item {
+    font-size: 15px;
+  }
+}
+
+/* --for section header part like rajniti , artha and all-- */
+.section-header {
+  display: flex;
+  align-items: center;
+}
+
+/* LEFT */
+.section-header__left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffd83e;
+  padding: 6px 18px 6px 8px;
+  color: black;
+  border-radius: 50px;
+}
+
+.section-header__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 99px;
+  /* background: #cf3a3a; */
+  background: #ffd83e;
+  display: grid;
+  place-items: center;
+  border: 1px solid #ffd83e;
+}
+
+.section-header__icon i {
+  color: black;
+  font-size: 18px;
+}
+
+.section-header__title {
+  font-family: "Anek Devanagari", sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  transition: color 220ms ease-in-out;
+  letter-spacing: 0.3px;
+}
+
+/* LINE */
+.section-header__line {
+  position: relative;
+  flex-grow: 1;
+  height: 1.5px;
+  margin: 0 24px;
+  background: #e9e9e9;
+  overflow: hidden;
+}
+
+.section-header__line::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #e9e9e9;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition:
+    transform 0.35s ease,
+    background-color 0.35s ease;
+}
+
+/* right arrow */
+.section-header__more {
+  height: 30px;
+  width: 30px;
+  border-radius: 99px;
+  background-color: #e9e9e9;
+  color: black;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    color 0.25s ease,
+    transform 0.3s ease;
+}
+
+/* hover effect */
+.section-header:hover .section-header__line::before {
+  transform: scaleX(1);
+  background: #ffd83e;
+}
+
+.section-header:hover .section-header__more {
+  color: #ffd83e;
+}
+
+/* --latest-news css-- */
+.latest-news {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* each row */
+.latest-item {
+  position: relative;
+
+  /* remove the huge top padding that pushes title down */
+  padding: 4px 0 23px 46px;
+}
+
+/* line ABOVE the dot */
+.latest-item:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 0;
+  height: 10px;
+  width: 1.5px;
+  background: #e9e9e9;
+}
+
+/* line BELOW the dot */
+.latest-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 15px;
+  bottom: 0;
+  width: 1.5px;
+  background: #e9e9e9;
+}
+
+/* click area */
+.latest-link {
+  display: block;
+  text-decoration: none;
+}
+
+/* red dot aligned with FIRST LINE of title */
+.latest-dot {
+  position: absolute;
+  left: 0px;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  background: #ffd83e;
+  z-index: 2;
+}
+
+/* remove default p margin so title sits perfectly */
+.new-title-small {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+/* meta */
+.latest-meta {
+  margin-top: 6px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.latest-time {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.latest-date {
+  color: #9ca3af;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+/* --for  resualble blue part section header part ---- */
+.section-header-blue {
+  display: flex;
+  align-items: center;
+}
+
+/* LEFT */
+.section-header__left-blue {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #f5f5f5;
+  padding: 6px 18px 6px 8px;
+  color: #f5f5f5;
+  border-radius: 50px;
+}
+
+.section-header__icon-blue {
+  width: 40px;
+  height: 40px;
+  border-radius: 99px;
+  /* background: #cf3a3a; */
+  background: #273890;
+  display: grid;
+  place-items: center;
+  border: 1px solid #ffffffb3;
+}
+
+.section-header__icon-blue i {
+  color: #fff;
+  font-size: 18px;
+}
+
+/* LINE */
+.section-header__line-blue {
+  position: relative;
+  flex-grow: 1;
+  height: 1.5px;
+  margin: 0 24px;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+
+/* right arrow */
+.section-header__more-blue {
+  height: 30px;
+  width: 30px;
+  border-radius: 99px;
+  background-color: #f5f5f5;
+  color: #273890;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    color 0.25s ease,
+    transform 0.3s ease;
+}
+
+/* ----- live update css part  ----- */
+.kyodai-live-hero {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* at the right end */
+.kyodai-live-panel {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: calc(100% - 40px);
+  width: min(420px, 88%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.35),
+    0 2px 8px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 14px 14px 12px;
+  border-radius: 4px;
+}
+
+/* header */
+.kyodai-live-panel__header {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+/* Live update badge with icon inside */
+.kyodai-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: #c62828;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+}
+.kyodai-live-badge i {
+  font-size: 20px;
+}
+.kyodai-live-panel__hint {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* scrollable list*/
+.kyodai-live-list {
+  margin-top: 12px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* scrollbar */
+.kyodai-live-list::-webkit-scrollbar {
+  width: 4px;
+}
+.kyodai-live-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 99px;
+}
+.kyodai-live-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 99px;
+}
+
+/* items/content */
+.kyodai-live-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 12px 8px 12px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+}
+
+.kyodai-live-item:last-child {
+  border-bottom: 0;
+}
+
+.kyodai-live-title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 24px;
+  color: rgba(255, 255, 255);
+}
+
+.kyodai-live-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
+  line-height: 23px;
+  font-weight: 400;
+}
+
+.kyodai-live-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.kyodai-live-meta i {
+  font-size: 14px;
+}
+
+/* mobile view: panel becomes bottom sheet */
+@media (max-width: 768px) {
+  .kyodai-live-hero {
+    overflow: visible;
+  }
+
+  .kyodai-live-panel {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 12px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: none;
+    border-radius: 4px;
+  }
+
+  .kyodai-live-list {
+    max-height: 320px;
+    overflow-y: auto;
+    padding-right: 6px;
+  }
+}
+
+/* -----live update second layoout -----  */
+.kyodai-live {
+  padding: 28px 0;
+}
+
+.kyodai-live-row {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin-left: 0;
+  margin-right: auto;
+  border-radius: 4px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+}
+
+/* big image area */
+.kyodai-live-row__media {
+  display: block;
+  position: relative;
+  height: 600px;
+}
+
+.kyodai-live-row__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+/* soft gradient so overlay reads well */
+.kyodai-live-row__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.06) 50%,
+    rgba(0, 0, 0, 0) 75%
+  );
+  pointer-events: none;
+}
+
+/* overlay card panel  */
+.kyodai-live-row__panel {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%) translateX(70%);
+  width: min(520px, 60%);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  border-radius: 4px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+  padding: 18px 18px 12px;
+  z-index: 5;
+}
+
+/* header */
+.kyodai-live-row__panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+}
+
+.kyodai-live-row__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: #c62828;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+}
+
+.kyodai-live-row__badge i {
+  font-size: 20px;
+}
+
+/* list scrolling area */
+.kyodai-live-row__list {
+  max-height: 320px;
+  overflow: auto;
+  padding-right: 6px;
+}
+
+/* clean scrollbar */
+.kyodai-live-row__list::-webkit-scrollbar {
+  width: 4px;
+}
+.kyodai-live-row__list::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 99px;
+}
+.kyodai-live-row__list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 99px;
+}
+
+/* item styles */
+.kyodai-live-row__item {
+  padding: 14px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.kyodai-live-row__item:last-child {
+  border-bottom: none;
+}
+
+.kyodai-live-row__itemTitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.kyodai-live-row__itemSub {
+  margin: 8px 0 10px;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 16px;
+  line-height: 23px;
+  font-weight: 400;
+}
+
+.kyodai-live-row__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.kyodai-live-row__meta i {
+  font-size: 14px;
+}
+
+/*  Responsive behavior:*/
+@media (max-width: 900px) {
+  .kyodai-live-row__media {
+    height: 320px;
+  }
+
+  .kyodai-live-row__panel {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 12px;
+    transform: none;
+    width: auto;
+    backdrop-filter: none;
+  }
+
+  .kyodai-live-row__list {
+    max-height: 320px;
+  }
+}
